@@ -205,6 +205,7 @@ CONNECTOR_SHARDS = {
     ),
     "connectors-2": (
         "gitlab", "jira", "linear", "azure_blob", "azure_files", "smb", "zendesk", "outlook", "gmail_workspace", "gmail_individual",
+        "dropbox_sim",
     ),
     "connectors-3": ("notion", "github_teams", "confluence", "s3", "gcs", "zammad", "sharepoint_sim"),
     "connectors-4": ("google_drive_workspace", "google_drive_individual"),
@@ -277,7 +278,7 @@ CONNECTOR_CODE_MARKERS: dict[str, tuple[str, ...]] = {
         name: ()
         for name in (
             "airtable", "asana", "bitbucket", "box", "clickhouse", "clickup", "databricks", "discord",
-            "dropbox_individual", "drupal_wiki", "evernote", "freshdesk", "hackernews", "lattice", "linkedin",
+            "drupal_wiki", "evernote", "freshdesk", "hackernews", "lattice", "linkedin",
             "lumos", "monday", "pagerduty", "posthog", "redshift", "salesforce", "servicenow", "trello", "workday",
             "zoom",
         )
@@ -289,7 +290,8 @@ CONNECTOR_CODE_MARKERS: dict[str, tuple[str, ...]] = {
     "cifs": ("smb",),
     "demo": ("demo",),
     # external/bookstack imports external/dropbox.
-    "dropbox": ("bookstack", "bookstack_sim"),
+    "dropbox": ("bookstack", "bookstack_sim", "dropbox_sim"),
+    "dropbox_individual": ("dropbox_sim",),
     "gcs": ("gcs",),
     "google_cloud_storage": ("gcs",),
     "github": ("github", "github_teams"),
